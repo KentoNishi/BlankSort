@@ -1,4 +1,4 @@
-name: Deploy to PyPI Test
+name: Deploy to PyPI
 
 on:
   release:
@@ -28,4 +28,4 @@ jobs:
       run: |
         echo Running in $PWD
         python setup.py ${{ github.ref }} sdist bdist_wheel
-        twine upload  dist/*
+        twine upload dist/*
