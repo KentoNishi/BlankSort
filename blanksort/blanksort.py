@@ -78,7 +78,9 @@ class BlankSort:
         url = "https://api.github.com/repos/KentoNishi/BlankSort/releases"
         response = self.__GET(url)
         if response == "":
-            url = "https://api.github.com/repos/KentoNishi/BlankSort-Prerelease/releases"
+            url = (
+                "https://api.github.com/repos/KentoNishi/BlankSort-Prerelease/releases"
+            )
             response = self.__GET(url)
         data = json.loads(response.text)
         fileURL = self.__getBinaryURL(data)
