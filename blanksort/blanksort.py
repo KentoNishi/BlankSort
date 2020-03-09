@@ -66,6 +66,7 @@ class BlankSort:
                 for file in release["assets"]:
                     if file["name"] == "binaries.zip":
                         return file["url"]
+        return ""
 
     def __downloadZIP(self, url, binary_path):
         response = self.__GET(url, stream=True)
@@ -74,8 +75,11 @@ class BlankSort:
 
     def __downloadBinary(self, binary_path):
         binary_path = os.path.dirname(os.path.dirname(binary_path))
-        url = "https://api.github.com/repos/KentoNishi/BlankSort-Prerelease/releases"
+        url = "https://api.github.com/repos/KentoNishi/BlankSort/releases"
         response = self.__GET(url)
+        if response == "":
+            url = "https://api.github.com/repos/KentoNishi/BlankSort-Prerelease/releases"
+            response = self.__GET(url)
         data = json.loads(response.text)
         fileURL = self.__getBinaryURL(data)
         print("Downloading default binaries.zip (" + fileURL + ")")
