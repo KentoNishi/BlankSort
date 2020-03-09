@@ -1,16 +1,11 @@
-# [BlankSort](https://test.pypi.org/project/blanksort/)
-The prerelease Python package for the BlankSort keyword extraction algorithm.
-
-<!--
-![Upload Python Package](https://github.com/KentoNishi/BlankSort-Prerelease/workflows/Upload%20Python%20Package/badge.svg)
--->
+# [BlankSort](https://pypi.org/project/blanksort/)
+The Python package for the BlankSort keyword extraction algorithm.
 
 ## Installation
 Use the following command to install from TestPyPI:
 ```shell
-pip install --no-cache-dir --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple --upgrade blanksort
+pip install --upgrade blanksort
 ```
-The package will be available on PyPI in the near future.
 
 ## Usage
 
