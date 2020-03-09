@@ -73,17 +73,21 @@ class BlankSort:
         z = zipfile.ZipFile(io.BytesIO(response.content))
         z.extractall(binary_path)
 
-    def __downloadBinary(self, binary_path):
-        binary_path = os.path.dirname(os.path.dirname(binary_path))
-        url = "https://api.github.com/repos/KentoNishi/BlankSort/releases"
+    def __getURL(self, url):
         response = self.__GET(url)
-        if response == "":
-            url = (
-                "https://api.github.com/repos/KentoNishi/BlankSort-Prerelease/releases"
-            )
-            response = self.__GET(url)
         data = json.loads(response.text)
         fileURL = self.__getBinaryURL(data)
+        return fileURL
+
+    def __downloadBinary(self, binary_path):
+        binary_path = os.path.dirname(os.path.dirname(binary_path))
+        fileURL = self.__getURL(
+            "https://api.github.com/repos/KentoNishi/BlankSort/releases"
+        )
+        if fileURL == "":
+            fileURL = self.__getURL(
+                "https://api.github.com/repos/KentoNishi/BlankSort-Prerelease/releases"
+            )
         print("Downloading default binaries.zip (" + fileURL + ")")
         self.__downloadZIP(fileURL, binary_path)
 
