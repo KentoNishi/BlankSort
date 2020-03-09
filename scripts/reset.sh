@@ -1,0 +1,1 @@
+rm -rf dist blanksort.egg-info build
