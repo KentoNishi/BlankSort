@@ -81,13 +81,17 @@ class BlankSort:
 
     def __downloadBinary(self, binary_path):
         binary_path = os.path.dirname(os.path.dirname(binary_path))
-        fileURL = self.__getURL(
-            "https://api.github.com/repos/KentoNishi/BlankSort/releases"
-        )
+        fileURL = ""
+        index = 0
+        urls = [
+            "https://api.github.com/repos/KentoNishi/BlankSort/releases",
+            "https://api.github.com/repos/KentoNishi/BlankSort-Prerelease/releases",
+        ]
+        while fileURL == "":
+            fileURL = self.__getURL(urls[index])
+            index += 1
         if fileURL == "":
-            fileURL = self.__getURL(
-                "https://api.github.com/repos/KentoNishi/BlankSort-Prerelease/releases"
-            )
+            raise Exception("No binary zip file was not found online.")
         print("Downloading default binaries.zip (" + fileURL + ")")
         self.__downloadZIP(fileURL, binary_path)
 
