@@ -18,7 +18,7 @@ setuptools.setup(
     description=long_description.split("\n")[1],
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/KentoNishi/BlankSort-Prerelease",
+    url="https://github.com/KentoNishi/BlankSort",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
