@@ -18,11 +18,11 @@ setuptools.setup(
     description=long_description.split("\n")[1],
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/KentoNishi/BlankSort",
+    url="https://github.com/KentoNishi/BlankSort-Prerelease",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
+        "License :: Attribution-NonCommercial-ShareAlike 4.0 International",
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.4",
