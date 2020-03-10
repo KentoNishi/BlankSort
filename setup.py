@@ -22,7 +22,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: Attribution-NonCommercial-ShareAlike 4.0 International",
+        "License :: Free for non-commercial use",
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.4",
