@@ -46,7 +46,7 @@ class BlankSort:
 
     def __GET(self, url, stream=False):
         heads = {
-            "Authorization": "token %s" % os.getenv("GITHUB_TOKEN"),
+            # "Authorization": "token %s" % os.getenv("GITHUB_TOKEN"),
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36",
         }
         if stream:
